@@ -7,8 +7,14 @@ app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', express.static(__dirname + '/static/'));
 
+app.set('view engine', 'ejs');
+
 app.get('/', function(req, res) {
-	res.send('Hi there');
+	res.render('index');
+});
+
+app.get('/about', function(req, res) {
+	res.render('about');
 });
 
 var port = process.env.PORT || 3000;
