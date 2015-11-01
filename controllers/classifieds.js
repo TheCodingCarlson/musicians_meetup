@@ -3,10 +3,12 @@ var router = express.Router();
 var db = require('../models');
 var request = require('request');
 
-router.route('/community')
+router.route('/classifieds')
 	.get(function(req, res) {
-		db.user.findAll().then(function(users) {
-		res.render('community', {users: users});
+		db.post.findAll({
+			include: [db.user]
+		}).then(function(posts) {
+			res.render('classifieds', {posts: posts});
 		});
 	});
 

@@ -6,19 +6,22 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a id='links' class="navbar-brand" href="/">Musicians Meet-Up</a>
+		<a id='links' class="navbar-brand" href="/user_profile">Musicians Meet-Up</a>
 	</div>
 
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav navbar-right">
-			<li><a id='links' href="/community">Community</a></li>
-			<li><a id='links' href="/">Classifieds</a></li>
-			<li><a id='links' href="/">Deals</a></li>
+			<li><a id='links' href="/user_profile">Me</a></li>
+			<li><a id='links' href="/classifieds">Classifieds</a></li>
+			<li><a id='links' href="/deals">Deals</a></li>
 			<li><a id='links' href="/">Logout</a></li>
 		</ul>
 	</div>
 </nav>
-
 <div class="container">
-	<h1><%= user.firstName + ' ' + user.lastName %></h1>
+	<% users.forEach(function(user) { %>
+		<div class="well">
+			<h4><%=user.firstName + ' ' + user.lastName%></h4>
+		</div>
+	<% }); %>
 </div>
