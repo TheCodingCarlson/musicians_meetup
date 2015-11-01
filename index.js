@@ -58,6 +58,8 @@ app.get('/sign_up', function(req, res) {
 });
 
 app.use('/', require('./controllers/auth'));
+app.use('/', require('./controllers/community'));
+app.use('/', require('./controllers/classifieds'));
 
 var port = process.env.PORT || 3000;
 
