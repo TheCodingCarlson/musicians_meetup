@@ -19,6 +19,7 @@
   "dependencies": {
     "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
+    "cloudinary": "^1.2.5",
     "connect-flash": "^0.1.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
