@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
+var cloudinary = require('cloudinary');
 
 app.set('view engine', 'ejs');
 

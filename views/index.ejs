@@ -1,27 +1,26 @@
 <div class = 'container'>
     <div class="jumbotron">
-      <h1>Welcome to the Musician's MeetUp!</h1>
+      <h1>Welcome to the Musicians MeetUp!</h1>
       <p>A place for musicians to connect and collaborate</p>
       <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more!</a></p>
     </div>
 
-    <div class='row'>
-        <div class='col-md-4'>
-            <form action="" method="POST" role="form">
-                <legend>Login</legend>
-            
-                <div class="form-group">
-                    <label for="">E-mail</label>
-                    <input type="email" name='email' class="form-control" placeholder="Email Address">
-                </div>
+    <div class='row login well'>
+        <form action="" method="POST" role="form">
+            <legend id='legend'>Login</legend>
+        
+            <div class="form-group">
+                <label for="">E-mail</label>
+                <input type="email" name='email' class="form-control" placeholder="Email Address">
+            </div>
 
-                <div class="form-group">
-                    <label for="">Password</label>
-                    <input type="password" name='password' class="form-control" placeholder="Password">
-                </div>
-            
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name='password' class="form-control" placeholder="Password">
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Login</button>
+            <a href="/sign_up" id='su-link'>Not a member? Sign-Up!</a>
+        </form>
     </div>
 </div>
