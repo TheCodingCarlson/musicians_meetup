@@ -58,3 +58,10 @@ body {
 #links:hover {
 	color: #B3D1FF;
 }
+.create h2 {
+	color: white;
+}
+#home {
+	margin-left: 85px;
+	margin-top: -56px;
+}

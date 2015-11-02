@@ -1,15 +1,28 @@
 <div class="container">
-	<div class='page-header'>
-		<h2>Please Create a Profile</h2>
+	<div class='page-header create'>
+		<h2>Please Create a <span class='musician'>Profile</span></h2>
 	</div>
 
-<form action="" method="POST" role="form">
-	<div class="form-group">
-		<label for="">label</label>
-		<input type="text" class="form-control" id="" placeholder="Input field">
+	<div class='well row'>
+		<form action="" method="POST" role="form">
+			<div class="form-group">
+				<label for="">First Name</label>
+				<input type="text" class="form-control" id="firstName" placeholder="first name"name='firstName'>
+			</div>
+			<div class="form-group">
+				<label for="">Last Name</label>
+				<input type="text" class="form-control" id="lastName" placeholder="last name" name='lastName'>
+			</div>
+			<div class="form-group">
+				<label for="">E-mail</label>
+				<input type="text" class="form-control" id="email" placeholder="email" name='email'>
+			</div>
+			<div class="form-group">
+				<label for="">Password</label>
+				<input type="password" class="form-control" id="password" placeholder="password" name='password'>
+			</div>
+			<button type="submit" class="btn btn-primary su-buttons">Submit</button>
+		</form>
+			<a id='home' href="/" type='button' class='btn btn-primary su-buttons'>Home</a>
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-</form>
-	<a id='back' href="/" type='button' class='btn btn-primary'>Back</a>
-
 </div>
