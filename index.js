@@ -57,6 +57,12 @@ app.get('/sign_up', function(req, res) {
 	res.render('sign_up');
 });
 
+app.get('/logout', function(req, res) {
+	req.flash('success', 'You have successfully logged out!');
+	req.session.user = false;
+	res.redirect('/');
+});
+
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));
