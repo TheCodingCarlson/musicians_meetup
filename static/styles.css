@@ -65,3 +65,12 @@ body {
 	margin-left: 85px;
 	margin-top: -56px;
 }
+#search {
+	color: white;
+}
+#search:hover {
+	color: #0052CC;
+}
+.search {
+	margin-right: 5px;
+}

@@ -66,6 +66,7 @@ app.get('/logout', function(req, res) {
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));
+app.use('/', require('./controllers/signUp'));
 
 var port = process.env.PORT || 3000;
 
