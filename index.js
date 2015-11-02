@@ -72,6 +72,7 @@ app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));
 app.use('/', require('./controllers/signUp'));
 app.use('/', require('./controllers/createProfile'));
+app.use('/', require('./controllers/createPost'));
 
 var port = process.env.PORT || 3000;
 

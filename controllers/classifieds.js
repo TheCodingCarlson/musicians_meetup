@@ -12,4 +12,15 @@ router.route('/classifieds')
 		});
 	});
 
+router.get('/classifieds/:query', function(req, res) {
+	var query = req.params.search;
+	db.user.find({
+		where: {
+			$like: query
+		}
+	}).then(function(filtered) {
+		res.render('classifieds', {posts: filtered});
+	});
+});
+
 module.exports = router;

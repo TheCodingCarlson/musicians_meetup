@@ -74,3 +74,6 @@ body {
 .search {
 	margin-right: 5px;
 }
+.post h2 {
+	color: white;
+}

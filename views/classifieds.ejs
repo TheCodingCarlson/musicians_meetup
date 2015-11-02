@@ -9,9 +9,9 @@
 		<a id='links' class="navbar-brand" href="/user_profile">Musicians Meet-Up</a>
 	</div>
 
-	<form class="navbar-form navbar-right search" role="search">
+	<form class="navbar-form navbar-right search" role="search" method='GET'>
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search" method='GET' name='query'>
+			<input type="text" class="form-control" placeholder="Search" name='search'>
 		</div>
 		<button id='search' type="submit" class="btn btn-default">Submit</button>
 	</form>
@@ -26,6 +26,12 @@
 	</div>
 </nav>
 <div class="container">
+	<div class='page-header'>
+		<h2>Classifieds<small> See what other musicians are looking for</small></h2>
+		<a href='/create_post' type="button" class="btn btn-default">Make a Post</a>
+	</div>
+			
+	
 	<% posts.forEach(function(post) { %>
 		<div class="well">
 			<h4><%=post.title%></h4>
