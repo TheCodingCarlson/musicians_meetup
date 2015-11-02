@@ -63,6 +63,10 @@ app.get('/logout', function(req, res) {
 	res.redirect('/');
 });
 
+app.get('/user_profile', function(req, res) {
+	res.render('user_profile', {user: req.currentUser});
+});
+
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));

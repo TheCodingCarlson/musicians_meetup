@@ -15,7 +15,7 @@ router.route('/')
 					res.send(err);
 				} else if(user) {
 					req.session.user = user.id;
-					res.render('user_profile', {user : user});
+					res.redirect('/user_profile');
 				} else {
 					req.flash('danger', 'Invalid email or password, please try again!');
 					res.redirect('/');
