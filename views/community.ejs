@@ -20,18 +20,21 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a id='links' href="/user_profile">Me</a></li>
 			<li><a id='links' href="/classifieds">Classifieds</a></li>
-			<li><a id='links' href="/deals">Deals</a></li>
-			<li><a id='links' href="/">Logout</a></li>
+			<li><a id='links' href="#">Messages</a></li>
+			<li><a id='links' href="/logout">Logout</a></li>
 		</ul>
 	</div>
 </nav>
 <div class="container">
 	<div class='page-header'>
-		<h2>Community <small>connect with other musicians</small></h2>
+		<h2 class='blue'>Community - <small class='white'>Connect With Other Musicians</small></h2>
 	</div>
 	<% users.forEach(function(user) { %>
 		<div class="well">
-			<h4><%=user.firstName + ' ' + user.lastName%></h4>
+			<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
+			<h5><%=user.instruments%></h5>
+			<h5><%= user.location%></h5>
+			<a href='#' type='button' class='btn btn-primary'>Contact this Musician!</a>
 		</div>
 	<% }); %>
 </div>

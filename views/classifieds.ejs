@@ -20,23 +20,23 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a id='links' href="/user_profile">Me</a></li>
 			<li><a id='links' href="/community">Community</a></li>
-			<li><a id='links' href="/deals">Deals</a></li>
-			<li><a id='links' href="/">Logout</a></li>
+			<li><a id='links' href="#">Messages</a></li>
+			<li><a id='links' href="/logout">Logout</a></li>
 		</ul>
 	</div>
 </nav>
 <div class="container">
 	<div class='page-header'>
-		<h2>Classifieds<small> See what other musicians are looking for</small></h2>
-		<a href='/create_post' type="button" class="btn btn-default">Make a Post</a>
+		<h2 class='blue'>Classifieds - <small class='white'> See What Other Musicians Are Looking For</small></h2>
+		<a href='/create_post' type="button" class="btn btn-default white">Make a Post</a>
 	</div>
 			
 	
 	<% posts.forEach(function(post) { %>
-		<div class="well">
+		<div class="well names">
 			<h4><%=post.title%></h4>
 			<p><%=post.body%></p>
-			<p><%=post.user.firstName%></p>
+			<a href='user_profile/<%=post.user.id%>'><p><%=post.user.firstName + ' ' + post.user.lastName%></a> - <%=post.user.location%></p>
 		</div>
 	<% }); %>
 </div>
