@@ -19,15 +19,24 @@
 	</div>
 </nav>
 
-<div class="container">
-	<div class='page-header profile'>
-		<h1><%= user.firstName + ' ' + user.lastName %></h1>
+<div class="container profile">
+	<div class='page-header'>
+		<h1 class='blue'><%= user.firstName + ' ' + user.lastName %> - <small class='white'> <%=user.location%></small></h1>
+	</div>
+
+	<div class='row lv_1'>
+		<div class='col-md-6 pic'>
+		</div>
+		<div class='col-md-6 info'>
+			<p><span class='musician'>Instruments I Play:</span> <%=user.instruments%></p>
+			<p><span class='musician'>Genres I Play:</span> <%=user.genres%></p>
+		</div>
+	</div>
+
+	<div class='well row'>
+		<p><span class='musician'>Bio:</span> <%=user.bio%></p>
 	</div>
 	<div class='well row'>
-		<h4>Styles of Music I like to Play: <%=user.genres%></h4>
-		<h4>Location: <%=user.location%></h4>
-	</div>
-	<div class='well row'>
-		<p>About Me: <%=user.bio%></p>
+		<p><span class='musician'>What I'm Looking For:</span> <%=user.lookingFor%></p>
 	</div>
 </div>

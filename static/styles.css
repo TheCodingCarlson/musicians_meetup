@@ -77,3 +77,52 @@ body {
 .post h2 {
 	color: white;
 }
+.white {
+	color: white;
+}
+.blue {
+	color: #B3D1FF;
+}
+.profile p {
+	font-size: 18px;
+}
+.names a {
+	color: #0052CC;
+	text-decoration: none;
+}
+.names a:hover {
+	text-decoration: underline;
+	color: white;
+}
+.community {
+	text-decoration: none;
+	color: #0052CC;
+}
+.community:hover {
+	text-decoration: underline;
+	color: white;
+}
+.pic {
+	height: 300px;
+	width: 250px;
+	background-color: rgba(245, 245, 245, 0.5);
+	border-radius: 15px;
+	border: 1px solid white;
+	margin-left: 10px;
+}
+.info {
+	height: 300px;
+	width: 800px;
+	background-color: rgba(245, 245, 245, 0.5);
+	border-radius: 15px;
+	border: 1px solid white;
+	margin-left: 30px;
+}
+.lv_1 {
+	margin-bottom: 25px;
+}
+
+
+
+
+

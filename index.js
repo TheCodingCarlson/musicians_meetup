@@ -67,6 +67,13 @@ app.get('/user_profile', function(req, res) {
 	res.render('user_profile', {user: req.currentUser});
 });
 
+app.get('/user_profile/:id', function(req, res) {
+	var id = req.params.id;
+	db.user.findById(id).then(function(user) {
+		res.render('user_profile', {user: user});
+	});
+});
+
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));
