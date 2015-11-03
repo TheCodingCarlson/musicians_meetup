@@ -18,7 +18,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         models.user.hasMany(models.post, {onDelete: 'cascade', hooks: true});
-        models.user.belongsToMany(models.user, {as : 'friend', through: 'friend'});
+        models.user.belongsToMany(models.user, {as : 'friend', through: 'usersFriends'});
       },
       authenticate: function(email, password, callback) {
         this.find({ where: { email: email }}).then(function(user) {
