@@ -5,6 +5,7 @@ var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
 var cloudinary = require('cloudinary');
 
+
 app.set('view engine', 'ejs');
 
 app.use(ejsLayouts);
@@ -80,6 +81,7 @@ app.use('/', require('./controllers/classifieds'));
 app.use('/', require('./controllers/signUp'));
 app.use('/', require('./controllers/createProfile'));
 app.use('/', require('./controllers/createPost'));
+app.use('/', require('./controllers/messages'));
 
 var port = process.env.PORT || 3000;
 

@@ -33,10 +33,15 @@
 			
 	
 	<% posts.forEach(function(post) { %>
-		<div class="well names">
-			<h4><%=post.title%></h4>
-			<p><%=post.body%></p>
-			<a href='user_profile/<%=post.user.id%>'><p><%=post.user.firstName + ' ' + post.user.lastName%></a> - <%=post.user.location%></p>
+		<div class="well">
+			<div class='names'>
+				<h4><%=post.title%></h4>
+				<p><%=post.body%></p>
+				<p><a href='user_profile/<%=post.user.id%>'><%=post.user.firstName + ' ' + post.user.lastName%></a> - <%=post.user.location%></p>
+			</div>
+			<div class='message'>
+				<a id='message' href='/send_message/<%=post.id%>' type="button" class="btn btn-default white">Reply</a>
+			</div>
 		</div>
 	<% }); %>
 </div>

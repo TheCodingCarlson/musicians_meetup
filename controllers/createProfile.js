@@ -18,7 +18,7 @@ router.route('/create_profile')
 
 		db.user.find({
 			where: {
-				email: req.session.email
+				email: req.currentUser.email
 			}
 		}).then(function(user) {
 			user.updateAttributes({

@@ -13,7 +13,6 @@ router.route('/create_post')
 		var body = req.body.body;
 
 		if(title && body) {
-			console.log(title);
 			db.user.findById(id).then(function(user) {
 				user.createPost({
 					title: title,
