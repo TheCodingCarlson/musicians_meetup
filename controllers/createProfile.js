@@ -30,7 +30,8 @@ router.route('/create_profile')
 				bio: bio,
 				lookingFor: lookingFor
 			}).then(function() {
-				res.render('user_profile', {user: user});
+				req.session.user = user.id;
+				res.redirect("/user_profile");
 			});
 		});
 	});

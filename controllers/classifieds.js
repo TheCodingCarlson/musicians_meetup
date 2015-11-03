@@ -10,7 +10,7 @@ router.route('/classifieds')
 			db.post.findAll({
 				where: {
 					title: {
-						$like: '%'+query+'%'
+						$iLike: '%'+query+'%'
 					}
 				},
 				include: [db.user]

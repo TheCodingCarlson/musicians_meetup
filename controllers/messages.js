@@ -43,7 +43,4 @@ router.route('/send_message/:id')
 			});
 	});
 
-
-
-
 module.exports = router;

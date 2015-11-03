@@ -65,13 +65,26 @@ app.get('/logout', function(req, res) {
 });
 
 app.get('/user_profile', function(req, res) {
-	res.render('user_profile', {user: req.currentUser});
+	var id = req.currentUser.id;
+	db.user.find({
+		where: {
+			id: id
+		}
+	}).then(function(user) {
+		user.getFriend().then(function(friend) {
+			var data = {
+				user: user, friends:friend
+			};
+			res.render('user_profile', data);
+		});
+		
+	});
 });
 
 app.get('/user_profile/:id', function(req, res) {
 	var id = req.params.id;
 	db.user.findById(id).then(function(user) {
-		res.render('user_profile', {user: user});
+		res.render('user_profile', {user: user, friends:null});
 	});
 });
 
@@ -82,6 +95,7 @@ app.use('/', require('./controllers/signUp'));
 app.use('/', require('./controllers/createProfile'));
 app.use('/', require('./controllers/createPost'));
 app.use('/', require('./controllers/messages'));
+app.use('/', require('./controllers/friends'));
 
 var port = process.env.PORT || 3000;
 
