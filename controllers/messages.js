@@ -43,4 +43,39 @@ router.route('/send_message/:id')
 			});
 	});
 
+router.route('/say_hi/:id')
+	.get(function(req, res) {
+		var id = req.params.id;
+		db.user.find({
+			where: {
+				id: id
+			}
+		}).then(function(user) {
+			res.render('say_hi', {user: user});
+	});
+	}).post(function(req, res) {
+		var title = req.body.hiTitle;
+		var body = req.body.hiBody;
+		var user = req.session.user;
+		var id = req.params.id;
+		db.user.find({
+			where: {
+				id: id
+			}
+		}).then(function(user) {
+			var data = {
+				from: req.currentUser.email,
+				to: user.email,
+				subject: title,
+				text: body
+			}
+
+			mailgun.messages().send(data, function (error, body) {
+					console.log(data);
+			});
+
+			res.redirect('/community');
+		});
+	});
+
 module.exports = router;
