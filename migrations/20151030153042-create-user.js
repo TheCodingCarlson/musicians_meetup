@@ -20,6 +20,9 @@ module.exports = {
       lastName: {
         type: Sequelize.STRING
       },
+      instruments: {
+        type: Sequelize.STRING
+      },
       location: {
         type: Sequelize.STRING
       },

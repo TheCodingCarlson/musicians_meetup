@@ -6,16 +6,12 @@ var request = require('request')
 router.route('/classifieds')
 	.get(function(req, res) {
 		var query = req.query.search;
-		console.log('AAAAAAA' + ' ' + query);
 		if(query) {
 			db.post.findAll({
 				where: {
 					title: {
 						$like: '%'+query+'%'
 					}
-					// body: {
-					// 	$like: '%'+query+'%'
-					// }
 				},
 				include: [db.user]
 			}).then(function(filtered) {
