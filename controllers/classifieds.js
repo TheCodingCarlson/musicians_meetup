@@ -1,26 +1,34 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models');
-var request = require('request');
+var request = require('request')
 
 router.route('/classifieds')
 	.get(function(req, res) {
-		db.post.findAll({
-			include: [db.user]
-		}).then(function(posts) {
-			res.render('classifieds', {posts: posts});
-		});
-	});
+		var query = req.query.search;
+		console.log('AAAAAAA' + ' ' + query);
+		if(query) {
+			db.post.findAll({
+				where: {
+					title: {
+						$like: '%'+query+'%'
+					}
+					// body: {
+					// 	$like: '%'+query+'%'
+					// }
+				},
+				include: [db.user]
+			}).then(function(filtered) {
+				res.render('classifieds', {posts: filtered});
+			});
 
-router.get('/classifieds/:query', function(req, res) {
-	var query = req.params.search;
-	db.user.find({
-		where: {
-			$like: query
+		} else {
+			db.post.findAll({
+				include: [db.user]
+			}).then(function(posts) {
+				res.render('classifieds', {posts: posts});
+			});
 		}
-	}).then(function(filtered) {
-		res.render('classifieds', {posts: filtered});
 	});
-});
 
 module.exports = router;
