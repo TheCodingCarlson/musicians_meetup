@@ -22,19 +22,23 @@
 <div class="container profile">
 	<div class='page-header'>
 		<h1 class='blue'><%= user.firstName + ' ' + user.lastName %> - <small class='white'> <%=user.location%></small></h1>
+		<% if (currentUser) { %>
+			<a href='#' type='button' class='btn btn-primary'>Add to Friends!</a>
+		<% } %>
 	</div>
 
 	<div class='row lv_1'>
 		<div class='col-md-6 pic'>
 		</div>
+
 		<div class='col-md-6 info'>
-			<p><span class='musician'>Instruments I Play:</span> <%=user.instruments%></p>
-			<p><span class='musician'>Genres I Play:</span> <%=user.genres%></p>
+			<p><span class='musician'>Bio:</span> <%=user.bio%></p>	
 		</div>
 	</div>
 
 	<div class='well row'>
-		<p><span class='musician'>Bio:</span> <%=user.bio%></p>
+		<p><span class='musician'>Instruments I Play:</span> <%=user.instruments%></p>
+		<p><span class='musician'>Genres I Play:</span> <%=user.genres%></p>
 	</div>
 	<div class='well row'>
 		<p><span class='musician'>What I'm Looking For:</span> <%=user.lookingFor%></p>

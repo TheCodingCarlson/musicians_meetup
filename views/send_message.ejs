@@ -1,0 +1,16 @@
+<div class="container">
+	<div class='page-header'>
+		<h2>Reply To: <%=post.user.firstName + ' ' + post.user.lastName%></h2>
+		<h4>Regarding: <%=post.title%></h4> 
+	</div>
+
+	<form action="" method="POST" role="form">
+		<div class="form-group">
+			<label for="">Message</label>
+			<textarea type="text" class="form-control" id="messageBody" placeholder="Input field" name='messageBody'></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Send</button>
+	</form>
+	<a id='home' href="/classifieds" type='button' class='btn btn-primary white'>Back</a>
+</div>
