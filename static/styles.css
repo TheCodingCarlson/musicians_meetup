@@ -157,3 +157,15 @@ body {
 #contact {
 	margin-bottom: 5px;
 }
+#friend {
+	color: white;
+	text-decoration: none;
+}
+#friend:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
