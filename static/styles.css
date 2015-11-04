@@ -124,6 +124,10 @@ body {
 #trash {
 	margin-bottom: 15px;
 }
+#pen {
+	margin-bottom: 15px;
+	margin-right: 5px;
+}
 #login-btn {
 	margin-top: 5px;
 }
