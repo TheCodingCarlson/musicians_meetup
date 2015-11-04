@@ -3,11 +3,15 @@ var router = express.Router();
 var db = require('../models');
 var request = require('request');
 
-router.route('/create_post')
-	.get(function(req, res) {
+router.get('/create_post', function(req, res) {
+	if(req.currentUser) {
 		res.render('create_post');
-	})
-	.post(function(req, res) {
+	} else { 
+		res.redirect('/');
+	}
+});
+
+router.post('/create_post', function(req, res) {
 		var id = req.session.user;
 		var title = req.body.title;
 		var body = req.body.body;
