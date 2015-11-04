@@ -12,7 +12,7 @@ body {
 	margin-top: 20px;
 }
 .login {
-	height: 270px;
+	height: 300px;
 	width: 400px;
 	color: #0052CC;
 	margin: 0 auto;
@@ -26,9 +26,15 @@ body {
 	color: #0052CC;
 	border: 2px solid #0052CC;
 }
-#su-link {
+.w-link {
 	color: #0052CC;
+}
+#su-link {
 	margin-left: 35px;
+	margin-bottom: -15px;
+}
+#c-link {
+	margin-left: 103px;
 }
 .motto h1 {
 	color: white;
@@ -121,9 +127,16 @@ body {
 .lv_1 {
 	margin-bottom: 25px;
 }
-
-
-
-
-
-
+#trash {
+	margin-bottom: 15px;
+}
+#login-btn {
+	margin-top: 5px;
+}
+#b-link {
+	color: white;
+	text-decoration: none;
+}
+#b-link:hover {
+	text-decoration: underline;
+}

@@ -1,3 +1,4 @@
+<% if(currentUser) { %>
 <nav class="navbar navbar-default" role="navigation">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -25,16 +26,46 @@
 		</ul>
 	</div>
 </nav>
+
+<% } else { %>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a id='links' class="navbar-brand" href="/">Musicians Meet-Up</a>
+	</div>
+
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a id='links' href="/community">Community</a></li>
+			<li><a id='links' href="/sign_up">Sign-Up</a></li>
+			<li><a id='links' href="/">Home</a></li>	
+		</ul>
+	</div>
+</nav>
+<% } %>
+
 <div class="container">
 	<div class='page-header'>
-		<h2 class='blue'>Community - <small class='white'>Connect With Other Musicians</small></h2>
+		<h2 class='blue'>Community - 
+		<% if (currentUser) { %>
+				<small class='white'>Connect With Other Musicians</small></h2>
+		<% } else { %>
+				<small class='white'><a id='b-link' href='sign_up'>Join the Community and Sign Up Now!</a></small></h2>
+		<% } %>
 	</div>
 	<% users.forEach(function(user) { %>
 		<div class="well">
 			<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
 			<h5><%=user.instruments%></h5>
 			<h5><%= user.location%></h5>
+			<% if (currentUser) { %>
 			<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary'>Contact this Musician!</a>
+			<% } %>
 		</div>
 	<% }); %>
 </div>

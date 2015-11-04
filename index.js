@@ -3,14 +3,15 @@ var app = express();
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
-var cloudinary = require('cloudinary');
-
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 app.set('view engine', 'ejs');
 
 app.use(ejsLayouts);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', express.static(__dirname + '/static/'));
+
 
 var session = require('express-session');
 app.use(session({
@@ -73,7 +74,8 @@ app.get('/user_profile', function(req, res) {
 	}).then(function(user) {
 		user.getFriend().then(function(friend) {
 			var data = {
-				user: user, friends:friend
+				user: user, 
+				friends:friend
 			};
 			res.render('user_profile', data);
 		});
@@ -88,12 +90,25 @@ app.get('/user_profile/:id', function(req, res) {
 	});
 });
 
+app.delete('/delete/:id',function(req, res) {
+	var id = req.params.id;
+	db.user.find({
+		where: {
+			id: id
+		}
+	}).then(function(user) {
+		user.destroy().then(function() {
+			res.send('destroyed!')
+		});
+	});
+});
+
 app.use('/', require('./controllers/auth'));
 app.use('/', require('./controllers/community'));
 app.use('/', require('./controllers/classifieds'));
 app.use('/', require('./controllers/signUp'));
-app.use('/', require('./controllers/createProfile'));
 app.use('/', require('./controllers/createPost'));
+app.use('/', require('./controllers/createProfile'));
 app.use('/', require('./controllers/messages'));
 app.use('/', require('./controllers/friends'));
 
