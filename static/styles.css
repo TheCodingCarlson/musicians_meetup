@@ -109,20 +109,14 @@ body {
 	color: white;
 }
 .pic {
-	height: 300px;
-	width: 250px;
-	background-color: rgba(245, 245, 245, 0.5);
-	border-radius: 15px;
-	border: 1px solid white;
-	margin-left: 10px;
+	margin-right: 50px;
 }
 .info {
 	height: 300px;
-	width: 800px;
+	width: 500px;
 	background-color: rgba(245, 245, 245, 0.5);
 	border-radius: 15px;
 	border: 1px solid white;
-	margin-left: 30px;
 }
 .lv_1 {
 	margin-bottom: 25px;
@@ -139,4 +133,27 @@ body {
 }
 #b-link:hover {
 	text-decoration: underline;
+}
+.pic img {
+	border-radius: 15px;
+	border: 2px solid white;
+}
+.comImg {
+	max-height: 300px; 
+	max-width: 250px;
+	border-radius: 15px;
+	border: 2px solid white;
+}
+.com-p {
+	display: inline-block;
+	text-align: center;
+}
+.c-info {
+	border: 2px solid white;
+	border-radius: 15px;
+	background-color: rgba(245, 245, 245, 0.5);
+	margin-top: 10px;
+}
+#contact {
+	margin-bottom: 5px;
 }

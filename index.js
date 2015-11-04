@@ -50,9 +50,9 @@ app.use(flash());
 app.use(function(req, res, next) {
 	res.locals.currentUser = req.currentUser;
 	res.locals.alerts = req.flash();
+	res.locals.url = cloudinary.url;
 	next();
 });
-
 
 app.get('/', function(req, res) {
 	res.render('index');
@@ -80,14 +80,13 @@ app.get('/user_profile', function(req, res) {
 app.get('/user_profile/:id', function(req, res) {
 	var id = req.params.id;
 	db.user.findById(id).then(function(user) {
-		var imgUrl = cloudinary.url(user.img, {width: 100, height: 150, crop: "fill" });
+		var imgUrl = cloudinary.url(user.img, {width: 600, height: 400, crop: "fill" });
 		user.getFriend().then(function(friend) {
 			var data = {
 				user: user, 
 				friends:friend,
 				userImg: imgUrl
 			};
-			console.log(data);
 			res.render('user_profile', data);
 		});
 		

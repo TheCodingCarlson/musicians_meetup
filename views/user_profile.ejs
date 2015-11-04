@@ -68,7 +68,7 @@
 		<p><span class='musician'>What I'm Looking For:</span> <%=user.lookingFor%></p>
 	</div>
 	<div class='well row'>
-		<h4><span class='musician'>Friends of </span> <%=user.firstName%>:</h4>
+		<h4><span class='musician'>Friends of </span> <span class='white'><%=user.firstName%>:</span></h4>
 		<ul>
 			<% if (friends) { %>
 				<% friends.forEach(function(friend) { %>

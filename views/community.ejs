@@ -59,12 +59,17 @@
 		<% } %>
 	</div>
 	<% users.forEach(function(user) { %>
-		<div class="well">
-			<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
-			<h5><%=user.instruments%></h5>
-			<h5><%= user.location%></h5>
-			<% if (currentUser) { %>
-			<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary'>Contact this Musician!</a>
+		<div class='col-md-3 com-p'>
+			<% if (user.img) { %>
+				<img class='comImg' src='<%=url(user.img)%>'/>
+			<% } %>
+			<div class ='c-info'>
+				<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
+				<h5><%=user.instruments%></h5>
+				<h5><%= user.location%></h5>
+				<% if (currentUser) { %>
+				<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
+			</div>
 			<% } %>
 		</div>
 	<% }); %>
