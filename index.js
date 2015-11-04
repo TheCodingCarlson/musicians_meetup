@@ -5,6 +5,13 @@ var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
+var cloudinary = require('cloudinary');
+
+cloudinary.config({ 
+	cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+	api_key: process.env.CLOUDINARY_API_KEY,
+	api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 app.set('view engine', 'ejs');
 
@@ -67,26 +74,23 @@ app.get('/logout', function(req, res) {
 
 app.get('/user_profile', function(req, res) {
 	var id = req.currentUser.id;
-	db.user.find({
-		where: {
-			id: id
-		}
-	}).then(function(user) {
-		user.getFriend().then(function(friend) {
-			var data = {
-				user: user, 
-				friends:friend
-			};
-			res.render('user_profile', data);
-		});
-		
-	});
+	res.redirect("/user_profile/"+id);
 });
 
 app.get('/user_profile/:id', function(req, res) {
 	var id = req.params.id;
 	db.user.findById(id).then(function(user) {
-		res.render('user_profile', {user: user, friends:null});
+		var imgUrl = cloudinary.url(user.img, {width: 100, height: 150, crop: "fill" });
+		user.getFriend().then(function(friend) {
+			var data = {
+				user: user, 
+				friends:friend,
+				userImg: imgUrl
+			};
+			console.log(data);
+			res.render('user_profile', data);
+		});
+		
 	});
 });
 

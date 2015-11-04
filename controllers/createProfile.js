@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('../models');
 var request = require('request');
 var multer = require('multer');
-var upload = multer({ dest: './uploads/'});
+var uploads = multer({ dest: './uploads'});
 var cloudinary = require('cloudinary');
 
 cloudinary.config({ 
@@ -16,7 +16,9 @@ router.route('/create_profile')
 	.get(function(req, res) {
 		res.render('create_profile');
 	})
-	.post(function(req, res) {
+	.post(uploads.single('image'),function(req, res) {
+		cloudinary.uploader.upload(req.file.path, function(result) {
+		var image = result.public_id;
 		var firstName = req.body.firstName;
 		var lastName = req.body.lastName;
 		var instruments = req.body.instruments;
@@ -24,7 +26,6 @@ router.route('/create_profile')
 		var genres = req.body.genres;
 		var bio = req.body.bio;
 		var lookingFor = req.body.lookingFor;
-		var image = req.body.something;
 
 		db.user.find({
 			where: {
@@ -34,19 +35,19 @@ router.route('/create_profile')
 		user.updateAttributes({
 			firstName: firstName,
 			lastName: lastName,
+			img: image,
 			instruments: instruments,
 			location: location,
-			img: image,
 			genres: genres,
 			bio: bio,
 			lookingFor: lookingFor
 			})
 			.then(function() {
-					req.session.user = user.id;
-					console.log(user.img);
-					res.redirect("/user_profile");
+				req.session.user = user.id;
+				res.redirect("/user_profile");
 			});
 		});
+	});
 });
 	
 module.exports = router;
