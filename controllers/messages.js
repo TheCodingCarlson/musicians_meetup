@@ -36,7 +36,7 @@ router.route('/send_message/:id')
 				}
 
 				mailgun.messages().send(data, function (error, body) {
-  					console.log(data);
+ 					console.log(data);
 				});
 
 				res.redirect('/classifieds');

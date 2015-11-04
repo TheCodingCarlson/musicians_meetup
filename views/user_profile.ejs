@@ -54,6 +54,7 @@
 
 	<div class='row lv_1'>
 		<div class='col-md-6 pic'>
+			<img src='<%=userImg%>'/>
 		</div>
 
 		<div class='col-md-6 info'>
@@ -71,7 +72,7 @@
 		<ul>
 			<% if (friends) { %>
 				<% friends.forEach(function(friend) { %>
-					<li><a href='/user_profile/<%=friend.id%>'><%=friend.firstName + friend.lastName%></a></li>
+					<li><a href='/user_profile/<%=friend.id%>'><%=friend.firstName + ' ' + friend.lastName%></a></li>
 				<% }); %>
 			<% } %>
 		</ul>
