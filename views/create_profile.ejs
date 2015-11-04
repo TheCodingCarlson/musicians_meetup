@@ -2,38 +2,50 @@
 	<div class='page-header'>
 		<h2>Please Create a <span class='musician'>Profile</span></h2>
 	</div>
-	<div class='well'>
 
-	<form action="" method="POST" role="form">
-			<div class="form-group">
-				<label for="">First Name</label>
-				<input type="text" class="form-control" id="first_name" placeholder="first name" name='firstName'>
-			</div>
-			<div class="form-group">
-				<label for="">Last Name</label>
-				<input type="text" class="form-control" id="last_name" placeholder="last name" name='lastName'>
-			</div>
-			<div class="form-group">
-				<label for="">What I Play</label>
-				<input type="text" class="form-control" id="instruments" placeholder="instruments" name='instruments'>
-			</div>
-				<div class="form-group">
-				<label for="">Genres I Enjoy Playing</label>
-				<input type="text" class="form-control" id="genres" placeholder="genres" name='genres'>
-			</div>
-			<div class="form-group">
-				<label for="">Location</label>
-				<input type="text" class="form-control" id="location" placeholder="city, state" name='location'>
-			</div>
-			<div class="form-group">
-				<label for="">Bio</label>
-				<textarea type="text" class="form-control" id="bio" placeholder="tell us about yourself" name='bio'></textarea>
-			</div>
-			<div class="form-group">
-				<label for="">What Are You Looking For?</label>
-				<textarea type="text" class="form-control" id="looking_for" placeholder="a blues bass player, a rock drummer, etc." name='lookingFor'></textarea>
-			</div>
-			<button type="submit" class="btn btn-primary su-buttons">Submit</button>
+	<div class='well'>
+		<form action="/create_profile" method="POST" role="form">
+		<div class='form-group'>
+			<label>Profile Picture</label>
+			<input type="file" name="something" accept="image/*">
+		</div>
+
+		<div class="form-group">
+			<label>First Name</label>
+			<input type="text" class="form-control" id="first_name" placeholder="first name" name='firstName'>
+		</div>
+
+		<div class="form-group">
+			<label>Last Name</label>
+			<input type="text" class="form-control" id="last_name" placeholder="last name" name='lastName'>
+		</div>
+
+		<div class="form-group">
+			<label>What I Play</label>
+			<input type="text" class="form-control" id="instruments" placeholder="instruments" name='instruments'>
+		</div>
+
+		<div class="form-group">
+			<label>Genres I Enjoy Playing</label>
+			<input type="text" class="form-control" id="genres" placeholder="genres" name='genres'>
+		</div>
+
+		<div class="form-group">
+			<label>Location</label>
+			<input type="text" class="form-control" id="location" placeholder="city, state" name='location'>
+		</div>
+
+		<div class="form-group">
+			<label>Bio</label>
+			<textarea type="text" class="form-control" id="bio" placeholder="tell us about yourself" name='bio'></textarea>
+		</div>
+
+		<div class="form-group">
+			<label>What Are You Looking For?</label>
+			<textarea type="text" class="form-control" id="looking_for" placeholder="a blues bass player, a rock drummer, etc." name='lookingFor'></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-primary su-buttons">Submit</button>
 		</form>
 	</div>
 </div>
