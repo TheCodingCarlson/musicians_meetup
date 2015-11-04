@@ -9,10 +9,12 @@ router.route('/community')
 		if(query) {
 			db.user.findAll({
 				where: {
-					firstName: {
-						$iLike: '%'+query+'%'
-					}
-				},
+					$or: [ 
+					{firstName: {$iLike: '%'+query+'%'}},
+					{lastName: {$iLike: '%'+query+'%'}},
+					{location: {$iLike: '%'+query+'%'}},
+					{instruments: {$iLike: '%'+query+'%'}}]
+				}	
 			}).then(function(filtered) {
 				res.render('community', {users: filtered});
 			});

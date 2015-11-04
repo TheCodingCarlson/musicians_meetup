@@ -53,9 +53,11 @@
 	</div>
 
 	<div class='row lv_1'>
+	<% if (user.img) { %>
 		<div class='col-md-6 pic'>
 			<img src='<%=userImg%>'/>
 		</div>
+	<% } %>
 
 		<div class='col-md-6 info'>
 			<p><span class='musician'>Bio:</span> <%=user.bio%></p>	
@@ -68,11 +70,11 @@
 		<p><span class='musician'>What I'm Looking For:</span> <%=user.lookingFor%></p>
 	</div>
 	<div class='well row'>
-		<h4><span class='musician'>Friends of </span> <span class='white'><%=user.firstName%>:</span></h4>
+		<h4><span class='musician'>Friends of <%=user.firstName%>:</span></h4>
 		<ul>
 			<% if (friends) { %>
 				<% friends.forEach(function(friend) { %>
-					<li><a href='/user_profile/<%=friend.id%>'><%=friend.firstName + ' ' + friend.lastName%></a></li>
+					<li><a id='friend' href='/user_profile/<%=friend.id%>'><%=friend.firstName + ' ' + friend.lastName%></a></li>
 				<% }); %>
 			<% } %>
 		</ul>

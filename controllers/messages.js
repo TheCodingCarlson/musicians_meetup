@@ -36,7 +36,7 @@ router.route('/send_message/:id')
 				}
 
 				mailgun.messages().send(data, function (error, body) {
- 					console.log(data);
+					console.log('Message Sent!')
 				});
 
 				res.redirect('/classifieds');
@@ -71,7 +71,7 @@ router.route('/say_hi/:id')
 			}
 
 			mailgun.messages().send(data, function (error, body) {
-					console.log(data);
+				console.log('Message Sent!');
 			});
 
 			res.redirect('/community');
