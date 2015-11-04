@@ -12,25 +12,29 @@ cloudinary.config({
 	api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.route('/create_profile')
-	.get(function(req, res) {
+router.get('/create_profile', function(req, res) {
+	if(req.currentUser) {
 		res.render('create_profile');
-	})
-	.post(uploads.single('image'),function(req, res) {
-		cloudinary.uploader.upload(req.file.path, function(result) {
-		var image = result.public_id;
-		var firstName = req.body.firstName;
-		var lastName = req.body.lastName;
-		var instruments = req.body.instruments;
-		var location = req.body.location;
-		var genres = req.body.genres;
-		var bio = req.body.bio;
-		var lookingFor = req.body.lookingFor;
+	} else {
+		res.redirect('/');
+	}
+});
+	
+router.post('/create_profile', uploads.single('image'),function(req, res) {
+	cloudinary.uploader.upload(req.file.path, function(result) {
+	var image = result.public_id;
+	var firstName = req.body.firstName;
+	var lastName = req.body.lastName;
+	var instruments = req.body.instruments;
+	var location = req.body.location;
+	var genres = req.body.genres;
+	var bio = req.body.bio;
+	var lookingFor = req.body.lookingFor;
 
-		db.user.find({
-			where: {
-				email: req.currentUser.email
-			}
+	db.user.find({
+		where: {
+			email: req.currentUser.email
+		}
 	}).then(function(user) {
 		user.updateAttributes({
 			firstName: firstName,
