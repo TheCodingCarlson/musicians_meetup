@@ -117,6 +117,4 @@ app.use('/', require('./controllers/friends'));
 
 var port = process.env.PORT || 3000;
 
-app.listen(port, function() {
-	console.log('Rev up the engines! You are listening to port ' + port + '!');
-});
+app.listen(port);
