@@ -3,8 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var ejsLayouts = require('express-ejs-layouts');
 var db = require('./models');
-var server = require('http').createServer(app);
-var io = require('socket.io')(server);
 var cloudinary = require('cloudinary');
 
 cloudinary.config({ 

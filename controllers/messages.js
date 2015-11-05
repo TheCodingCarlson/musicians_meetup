@@ -23,9 +23,7 @@ router.get('/send_message/:id', function(req, res) {
 	}
 });
 
-
-
-router.post('send_message/:id', function(req, res) {
+router.post('/send_message/:id', function(req, res) {
 	var message = req.body.messageBody;
 	var id = req.params.id;
 	var user = req.session.user;
@@ -43,9 +41,8 @@ router.post('send_message/:id', function(req, res) {
 			}
 
 			mailgun.messages().send(data, function (error, body) {
-				console.log('Message Sent!')
+				console.log('Message Sent!');
 			});
-
 			res.redirect('/classifieds');
 		});
 });
