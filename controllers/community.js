@@ -13,6 +13,7 @@ router.route('/community')
 					{firstName: {$iLike: '%'+query+'%'}},
 					{lastName: {$iLike: '%'+query+'%'}},
 					{location: {$iLike: '%'+query+'%'}},
+					{genres: {$iLike: '%'+query+'%'}},
 					{instruments: {$iLike: '%'+query+'%'}}]
 				}	
 			}).then(function(filtered) {
