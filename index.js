@@ -100,7 +100,7 @@ app.delete('/user_profile/:id',function(req, res) {
 			id: id
 		}
 	}).then(function(user) {
-		user.destroy().then(function() {
+		user.destroy({force: true}).then(function() {
 			res.send('destroyed!')
 		});
 	});
