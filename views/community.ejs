@@ -60,7 +60,6 @@
 		<% } %>
 	</div>
 	<% users.forEach(function(user) { %>
-		<div class='row'>
 		<div class='col-md-3 com-p'>
 			<% if (user.img) { %>
 				<img class='comImg' src='<%=url(user.img)%>'/>
@@ -74,7 +73,6 @@
 					<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
 				<% } %>
 			</div>
-		</div>
 		</div>
 	<% }); %>
 </div>
