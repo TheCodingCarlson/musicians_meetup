@@ -112,6 +112,7 @@ app.use('/', require('./controllers/classifieds'));
 app.use('/', require('./controllers/signUp'));
 app.use('/', require('./controllers/createPost'));
 app.use('/', require('./controllers/createProfile'));
+app.use('/', require('./controllers/editProfile'));
 app.use('/', require('./controllers/messages'));
 app.use('/', require('./controllers/friends'));
 
