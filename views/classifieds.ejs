@@ -39,9 +39,11 @@
 				<p><%=post.body%></p>
 				<p><a href='user_profile/<%=post.user.id%>'><%=post.user.firstName + ' ' + post.user.lastName%></a> - <%=post.user.location%></p>
 			</div>
-			<div class='message'>
-				<a id='message' href='/send_message/<%=post.id%>' type="button" class="btn btn-default white">Reply</a>
-			</div>
+			<% if(currentUser.id !== post.user.id) { %>
+				<div class='message'>
+					<a id='message' href='/send_message/<%=post.id%>' type="button" class="btn btn-default white">Reply</a>
+				</div>
+			<% } %>
 		</div>
 	<% }); %>
 </div>
