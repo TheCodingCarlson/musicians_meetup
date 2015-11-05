@@ -66,11 +66,12 @@
 			<div class ='c-info'>
 				<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
 				<h5><%=user.instruments%></h5>
+				<h5><%=user.genres%></h5>
 				<h5><%= user.location%></h5>
 				<% if (currentUser) { %>
 				<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
-			</div>
 			<% } %>
+			</div>
 		</div>
 	<% }); %>
 </div>

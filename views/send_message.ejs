@@ -1,12 +1,12 @@
 <div class="container">
 	<div class='page-header'>
-		<h2>Reply To: <%=post.user.firstName + ' ' + post.user.lastName%></h2>
-		<h4>Regarding: <%=post.title%></h4> 
+		<h2><span class='white'>Reply To:</span> <span class='blue'><%=post.user.firstName + ' ' + post.user.lastName%></span></h2>
+		<h3><span class='white'>Regarding:</span> <span class='blue'><%=post.title%></span></h3> 
 	</div>
 
 	<form action="" method="POST" role="form">
 		<div class="form-group">
-			<label for="">Message</label>
+			<label for=""><span class='blue'>Message</span></label>
 			<textarea type="text" class="form-control" id="messageBody" placeholder="Input field" name='messageBody'></textarea>
 		</div>
 

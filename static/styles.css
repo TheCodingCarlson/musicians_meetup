@@ -68,7 +68,7 @@ body {
 	color: white;
 }
 #home {
-	margin-left: 80px;
+	margin-left: 73px;
 	margin-top: -56px;
 }
 #search {
@@ -143,20 +143,22 @@ body {
 	border: 2px solid white;
 }
 .comImg {
-	max-height: 300px; 
-	max-width: 250px;
+	max-height: 200px; 
+	max-width: 200px;
 	border-radius: 15px;
 	border: 2px solid white;
 }
 .com-p {
 	display: inline-block;
 	text-align: center;
+	margin-bottom: 
 }
 .c-info {
 	border: 2px solid white;
 	border-radius: 15px;
 	background-color: rgba(245, 245, 245, 0.5);
-	margin-top: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 #contact {
 	margin-bottom: 5px;
