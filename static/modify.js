@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var id = $(this).data('id');
 
 		$.ajax({
-			url: '/delete/'+id,
+			url: '/user_profile/'+id,
 			method: 'DELETE'
 		}).done(function() {
 			window.location = '/';
