@@ -1,49 +1,49 @@
 <% if(currentUser) { %>
-<nav class="navbar navbar-default" role="navigation">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a id='links' class="navbar-brand" href="/user_profile">Musicians Meet-Up</a>
-	</div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id='links' class="navbar-brand" href="/user_profile">Musicians Meet-Up</a>
+		</div>
 
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav navbar-right">
-			<li><a id='links' href="/user_profile">Me</a></li>
-			<li><a id='links' href="/community">Community</a></li>
-			<li><a id='links' href="/classifieds">Classifieds</a></li>
-			<li><a id='links' href="/logout">Logout</a></li>
-		</ul>
-	</div>
-</nav>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a id='links' href="/user_profile">Me</a></li>
+				<li><a id='links' href="/community">Community</a></li>
+				<li><a id='links' href="/classifieds">Classifieds</a></li>
+				<li><a id='links' href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
 <% } else { %>
-<nav class="navbar navbar-default" role="navigation">
-	<div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a id='links' class="navbar-brand" href="/">Musicians Meet-Up</a>
-	</div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a id='links' class="navbar-brand" href="/">Musicians Meet-Up</a>
+		</div>
 
-	<div class="collapse navbar-collapse navbar-ex1-collapse">
-		<ul class="nav navbar-nav navbar-right">
-			<li><a id='links' href="/community">Community</a></li>
-			<li><a id='links' href="/sign_up">Sign-Up</a></li>
-			<li><a id='links' href="/">Home</a></li>	
-		</ul>
-	</div>
-</nav>
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a id='links' href="/community">Community</a></li>
+				<li><a id='links' href="/sign_up">Sign-Up</a></li>
+				<li><a id='links' href="/">Home</a></li>	
+			</ul>
+		</div>
+	</nav>
 <% } %>
 
 <div class="container profile">
 	<div class='page-header'>
-		<h1 class='blue'><%= user.firstName + ' ' + user.lastName %> - <small class='white'> <%=user.location%></small></h1>
+		<h1 class='blue'><%= user.firstName + ' ' + user.lastName %> - <small class='white'><%=user.location%></small></h1>
 		<% if (user.id !== currentUser.id && currentUser) { %>
 			<form method="POST" action='/user_profile' id='user-friends'>
 				<input name="friends_id" type="hidden" value="<%= user.id %>"/>

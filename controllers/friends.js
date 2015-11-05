@@ -23,5 +23,4 @@ router.route('/user_profile')
 		});
 	});
 
-
 module.exports = router;
