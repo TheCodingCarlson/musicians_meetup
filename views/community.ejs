@@ -42,6 +42,7 @@
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav navbar-right">
 			<li><a id='links' href="/community">Community</a></li>
+			<li><a id='links' href="/">Sign-In</a></li>
 			<li><a id='links' href="/sign_up">Sign-Up</a></li>
 			<li><a id='links' href="/">Home</a></li>	
 		</ul>
@@ -68,9 +69,9 @@
 				<h5><%=user.instruments%></h5>
 				<h5><%=user.genres%></h5>
 				<h5><%= user.location%></h5>
-				<% if (currentUser) { %>
-				<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
-			<% } %>
+				<% if (currentUser.id !== user.id) { %>
+					<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
+				<% } %>
 			</div>
 		</div>
 	<% }); %>
