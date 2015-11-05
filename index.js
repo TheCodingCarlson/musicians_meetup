@@ -93,7 +93,7 @@ app.get('/user_profile/:id', function(req, res) {
 	});
 });
 
-app.delete('/delete/:id',function(req, res) {
+app.delete('/user_profile/:id',function(req, res) {
 	var id = req.params.id;
 	db.user.find({
 		where: {
