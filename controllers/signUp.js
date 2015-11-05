@@ -12,7 +12,7 @@ router.route('/sign_up')
 		req.session.email = email;
 		if(email && password && password2) {
 			if (password !== password2) {
-				req.flash('error', 'Passwords must match!');
+				req.flash('danger', 'Passwords must match!');
 				res.redirect('/sign_up');
 			} else {
 				db.user.findOrCreate({

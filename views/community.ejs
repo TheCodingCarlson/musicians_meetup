@@ -69,7 +69,7 @@
 				<h5><%=user.instruments%></h5>
 				<h5><%=user.genres%></h5>
 				<h5><%= user.location%></h5>
-				<% if (currentUser.id !== user.id) { %>
+				<% if (currentUser.id !== user.id && currentUser) { %>
 					<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact this Musician!</a>
 				<% } %>
 			</div>
