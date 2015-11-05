@@ -21,7 +21,7 @@ router.route('/sign_up')
 					},
 					defaults: {
 						email: email,
-						password: password,
+						password: password
 					}
 				}).spread(function(user, created) {
 					if(created) {
@@ -29,6 +29,7 @@ router.route('/sign_up')
 						req.session.user = user.get().id
 						console.log(req.session.user);
 						res.redirect('/create_profile');
+						console.log(user);
 					} else {
 						req.flash('danger', 'A user with that email already exists');
 						res.redirect('/sign_up');

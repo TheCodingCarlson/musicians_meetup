@@ -12,37 +12,37 @@
 
 		<div class="form-group">
 			<label>First Name</label>
-			<input type="text" class="form-control" id="first_name" placeholder="first name" name='firstName'>
+			<input type="text" class="form-control" id="first_name" placeholder="first name" name='firstName' value='<%=user.firstName%>'>
 		</div>
 
 		<div class="form-group">
 			<label>Last Name</label>
-			<input type="text" class="form-control" id="last_name" placeholder="last name" name='lastName'>
+			<input type="text" class="form-control" id="last_name" placeholder="last name" name='lastName'value='<%=user.lastName%>'>
 		</div>
 
 		<div class="form-group">
 			<label>What I Play</label>
-			<input type="text" class="form-control" id="instruments" placeholder="instruments" name='instruments'>
+			<input type="text" class="form-control" id="instruments" placeholder="instruments" name='instruments' value='<%=user.instruments%>'>
 		</div>
 
 		<div class="form-group">
 			<label>Genres I Enjoy Playing</label>
-			<input type="text" class="form-control" id="genres" placeholder="genres" name='genres'>
+			<input type="text" class="form-control" id="genres" placeholder="genres" name='genres' value='<%=user.genres%>'>
 		</div>
 
 		<div class="form-group">
 			<label>Location</label>
-			<input type="text" class="form-control" id="location" placeholder="city, state" name='location'>
+			<input type="text" class="form-control" id="location" placeholder="city, state" name='location' value='<%=user.location%>'>
 		</div>
 
 		<div class="form-group">
 			<label>Bio</label>
-			<textarea type="text" class="form-control" id="bio" placeholder="tell us about yourself" name='bio'></textarea>
+			<textarea type="text" class="form-control" id="bio" placeholder="tell us about yourself" name='bio'><%=user.bio%></textarea>
 		</div>
 
 		<div class="form-group">
 			<label>What Are You Looking For?</label>
-			<textarea type="text" class="form-control" id="looking_for" placeholder="a blues bass player, a rock drummer, etc." name='lookingFor'></textarea>
+			<textarea type="text" class="form-control" id="looking_for" placeholder="a blues bass player, a rock drummer, etc." name='lookingFor'><%=user.lookingFor%></textarea>
 		</div>
 
 		<button type="submit" class="btn btn-primary su-buttons">Submit</button>
