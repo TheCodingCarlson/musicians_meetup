@@ -27,6 +27,8 @@ router.post('/send_message/:id', function(req, res) {
 	var message = req.body.messageBody;
 	var id = req.params.id;
 	var user = req.session.user;
+
+	if(message) {
 		db.post.find({
 			where: {
 				id: id
@@ -45,6 +47,11 @@ router.post('/send_message/:id', function(req, res) {
 			});
 			res.redirect('/classifieds');
 		});
+
+	} else {
+		req.flash('danger', 'You must enter message content to send a message!');
+		res.redirect('/send_message/' +id);
+	}
 });
 
 router.get('/say_hi/:id', function(req, res) {
@@ -67,24 +74,30 @@ router.post('/say_hi/:id', function(req, res) {
 	var body = req.body.hiBody;
 	var user = req.session.user;
 	var id = req.params.id;
-	db.user.find({
-		where: {
-			id: id
-		}
-	}).then(function(user) {
-		var data = {
-			from: req.currentUser.email,
-			to: user.email,
-			subject: title,
-			text: body
-		}
 
-		mailgun.messages().send(data, function (error, body) {
-			console.log('Message Sent!');
+	if(title && body) {
+		db.user.find({
+			where: {
+				id: id
+			}
+		}).then(function(user) {
+			var data = {
+				from: req.currentUser.email,
+				to: user.email,
+				subject: title,
+				text: body
+			}
+
+			mailgun.messages().send(data, function (error, body) {
+				console.log('Message Sent!');
+			});
+
+			res.redirect('/community');
 		});
-
-		res.redirect('/community');
-	});
+	} else {
+		req.flash('danger', 'You must enter message content!');
+		res.redirect('/say_hi/' +id);
+	}
 });
 
 module.exports = router;
