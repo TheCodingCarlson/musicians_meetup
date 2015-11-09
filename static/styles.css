@@ -171,8 +171,18 @@ body {
 #friend:hover {
 	text-decoration: underline;
 }
-
-
+.footer {
+	background: rgba(245, 245, 245, 0.5);
+	margin-top: 30px;
+}
+.error {
+	color: #0052CC;
+	text-align: center;
+	margin-top: 250px;
+}
+.error a {
+	color: white;
+}
 
 
 
