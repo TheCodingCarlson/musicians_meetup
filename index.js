@@ -76,18 +76,26 @@ app.get('/user_profile', function(req, res) {
 });
 
 app.get('/user_profile/:id', function(req, res) {
-var id = req.params.id;
-	db.user.findById(id).then(function(user) {
-		var imgUrl = cloudinary.url(user.img, { width: 600, height: 400, crop: "thumb" });
-		user.getFriend().then(function(friend) {
-			var data = {
-				user: user, 
-				friends:friend,
-				userImg: imgUrl
-			};
-			res.render('user_profile', data);
-		});	
-	});
+	var id = req.params.id;
+	if(isNaN(id) === false) {
+		db.user.findById(id).then(function(user) {
+			if(user) {
+				var imgUrl = cloudinary.url(user.img, { width: 600, height: 400, crop: "thumb" });
+				user.getFriend().then(function(friend) {
+					var data = {
+						user: user, 
+						friends:friend,
+						userImg: imgUrl
+					};
+					res.render('user_profile', data);
+				});
+			} else {
+				res.render('error');
+			}
+		});
+	} else { 
+		res.render('error');
+	}
 });
 
 app.delete('/user_profile/:id',function(req, res) {
