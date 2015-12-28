@@ -143,14 +143,12 @@ body {
 	border: 2px solid white;
 }
 .comImg {
-	max-height: 200px; 
-	max-width: 200px;
+	height: 175px;
 	border-radius: 15px;
 	border: 2px solid white;
 }
 .com-p {
 	text-align: center;
-	height: 350px;
 	margin-bottom: 10px;
 	margin-top: 10px;	
 }
