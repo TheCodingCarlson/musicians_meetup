@@ -15,7 +15,7 @@ body {
 	height: 300px;
 	width: 400px;
 	color: #0052CC;
-	margin: 0 auto;
+	margin: 5px auto;
 }
 .btn {
 	background: #0052CC;
@@ -177,4 +177,7 @@ body {
 }
 .contact {
 	font-size: 15px;
+}
+.all-users {
+	overflow: scroll;
 }
