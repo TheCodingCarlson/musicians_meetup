@@ -142,6 +142,7 @@ body {
 .comImg {
 	padding-top: 5px;
 	height: 18vh;
+	width: auto;
 	border-radius: 15px;
 }
 .com-p {
@@ -179,5 +180,6 @@ body {
 	font-size: 15px;
 }
 .all-users {
+	height: 500px;
 	overflow: scroll;
 }
