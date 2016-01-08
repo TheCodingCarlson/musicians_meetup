@@ -108,15 +108,11 @@ body {
 	text-decoration: underline;
 	color: white;
 }
-.pic {
-	margin-right: 50px;
-}
 .info {
-	height: 300px;
-	width: 500px;
 	background-color: rgba(245, 245, 245, 0.5);
-	border-radius: 15px;
+	border-radius: 5px;
 	border: 1px solid white;
+	margin: 10px;
 }
 .lv_1 {
 	margin-bottom: 25px;
@@ -141,24 +137,21 @@ body {
 .pic img {
 	border-radius: 15px;
 	border: 2px solid white;
+	margin-bottom: 5px;
 }
 .comImg {
-	height: 175px;
+	padding-top: 5px;
+	height: 18vh;
 	border-radius: 15px;
-	border: 2px solid white;
 }
 .com-p {
 	text-align: center;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	height: 300px;	
-}
-.c-info {
+	margin: 5px;
+	height: 280px;
+	width: auto;
 	border: 2px solid white;
 	border-radius: 15px;
-	background-color: rgba(245, 245, 245, 0.5);
-	margin-top: 5px;
-	margin-bottom: 5px;
+	background-color: rgba(245, 245, 245, 0.5);	
 }
 #contact {
 	margin-bottom: 5px;

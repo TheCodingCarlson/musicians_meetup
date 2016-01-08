@@ -53,23 +53,21 @@
 	</div>
 
 	<div class='row lv_1'>
-	<% if (user.img) { %>
-		<div class='col-md-6 pic'>
-			<img src='<%=userImg%>'/>
+		<div class='col-md-5 col-xs-12 pic'>
+			<img class='img-responsive' src='<%=userImg%>'/>
 		</div>
-	<% } %>
 
-		<div class='col-md-6 info'>
+		<div class='col-md-5 col-xs-12 info'>
 			<p><span class='musician'>Bio:</span> <%=user.bio%></p>	
 		</div>
 	</div>
 
-	<div class='well row'>
+	<div class='well row custom'>
 		<p><span class='musician'>Instruments I Play:</span> <%=user.instruments%></p>
 		<p><span class='musician'>Genres I Play:</span> <%=user.genres%></p>
 		<p><span class='musician'>What I'm Looking For:</span> <%=user.lookingFor%></p>
 	</div>
-	<div class='well row'>
+	<div class='well row custom'>
 		<h4><span class='musician'>Friends of <%=user.firstName%>:</span></h4>
 		<ul>
 			<% if (friends) { %>
