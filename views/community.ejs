@@ -59,17 +59,17 @@
 				<small class='white'><a id='b-link' href='sign_up'>Join the Community and Sign Up Now!</a></small></h2>
 		<% } %>
 	</div>
-	<div class='row'>
-	<% users.forEach(function(user) { %>
-		<% if (currentUser && currentUser.id !== user.id) { %>
-			<div class='col-md-3 com-p'>
-				<img class='comImg' src='<%=url(user.img)%>'/>
-				<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
-				<h5><%=user.instruments%></h5>
-				<h5><%= user.location%></h5>
-				<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact</a>
-			</div>
-		<% } %>
-	<% }); %>
+	<div class='row all-users'>
+		<% users.forEach(function(user) { %>
+				<div class='col-md-3 com-p'>
+					<img class='comImg' src='<%=url(user.img)%>'/>
+					<a class='community' href='/user_profile/<%=user.id%>'><h4><%=user.firstName + ' ' + user.lastName%></h4></a>
+					<h5><%=user.instruments%></h5>
+					<h5><%= user.location%></h5>
+					<% if (currentUser && currentUser.id !== user.id) { %>
+						<a href='/say_hi/<%=user.id%>' type='button' class='btn btn-primary' id='contact'>Contact</a>
+					<% } %>
+				</div>
+		<% }); %>
 	</div>
 </div>
